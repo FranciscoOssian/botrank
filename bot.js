@@ -21,7 +21,7 @@ client.on('message', async(message) => {
     await message.react("👍");
     await message.react("👎");
   }
-});
+}.catch(err => {throw new Error(err)}));
 
 // Log our bot in using the token from https://discordapp.com/developers/applications/me
 client.login(process.env.bot_token);
