@@ -18,8 +18,8 @@ client.on('ready', () => {
 client.on('message', async(message) => {
   
   if (message.channel.id === '638783819444649984') {
-    message.react("👍");
-    message.react("👎");
+    await message.react("👍");
+    await message.react("👎");
   }
 });
 
