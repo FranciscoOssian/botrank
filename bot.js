@@ -17,7 +17,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
   
-  if (message.channel.id === '612006161172004894') {
+  if (message.channel.id === '638783819444649984') {
     message.react("👍");
     message.react("👎");
   }
