@@ -17,7 +17,7 @@ client.on('ready', () => {
 
 client.on('message', async(message) => {
   
-  if (message.channel.id === '638783819444649984') {
+  if (message.channel.id === process.env.id_channel) {
     await message.react("👍");
     await message.react("👎");
   }
