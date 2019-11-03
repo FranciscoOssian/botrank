@@ -15,7 +15,7 @@ client.on('ready', () => {
   console.log('I am ready!');
 });
 
-client.on('message', message => {
+client.on('message', async(message) => {
   
   if (message.channel.id === '638783819444649984') {
     message.react("👍");
