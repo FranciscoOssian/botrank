@@ -17,7 +17,7 @@ client.on('ready', () => {
 
 client.on('message', async(message) => {
   
-  if (message.channel.id === process.env.id_channel_memes || process.env.id_channel_sugestoes) {
+  if (message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
     await message.react("👍");
     await message.react("👎");
   }
