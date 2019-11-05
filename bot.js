@@ -15,11 +15,11 @@ client.on('ready', () => {
   console.log('I am ready!');
 });
 
-client.on('message', async(message) => {
+client.on('message', message => {
   
   if (message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
-    await message.react("👍");
-    await message.react("👎");
+    message.react("👍");
+    message.react("👎");
   }
 });
 
