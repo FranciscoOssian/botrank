@@ -29,6 +29,10 @@ client.on('message', message => {
       message.channel.send(message.content.slice(4))
     }
   
+  if(comandName === 'ban'){
+  //
+  }
+  
   
 });
 
