@@ -29,8 +29,8 @@ client.on('message', message => {
       message.channel.send(message.content.slice(4))
     }
   
-  if(comandName === 'ban'){
-  //
+  if(comandName === 'este'){
+  message.edit('This is my new content!') .then(msg => console.log(`New message content: ${msg}`)) .catch(console.error);
   }
   
   
