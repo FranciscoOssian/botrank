@@ -19,14 +19,14 @@ client.on('message', message => {
   
   if(message.content.indexOf(Config.GetConfig().prefix) != 0) return
     
-    var comandName = message.content.split(" ")[0].slice(1)
-    //var comand = message.content.split(" ") "+say hi"      ->  ['+say','hi']
-    //comand = comand[0]                      ['+say','hi']  ->  '+say' 
-    //comand = comand.slice(1)                '+say'         ->  'say'
+  var comandName = message.content.split(" ")[0].slice(1)
+  //var comand = message.content.split(" ") "+say hi"      ->  ['+say','hi']
+  //comand = comand[0]                      ['+say','hi']  ->  '+say' 
+  //comand = comand.slice(1)                '+say'         ->  'say'
     
-    if(comandName === 'say'){
-        message.delete().catch(O_o=>{}); 
-        message.channel.send(message.content.slice(4))
+  if(comandName === 'say'){
+      message.delete().catch(O_o=>{}); 
+      message.channel.send(message.content.slice(4))
     }
   
   
