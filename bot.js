@@ -30,7 +30,7 @@ client.on('message', message => {
     }
   
   if(comandName === 'este'){
-  message.edit('This is my new content!') .then(msg => console.log(`New message content: ${msg}`)) .catch(console.error);
+    
   }
   
   
