@@ -12,12 +12,12 @@ client.on('message', message => {
   
   if(message.author.bot) return
   
+  if(message.content.indexOf(Config.GetConfig().prefix) != 0) return
+  
   if (message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
     message.react("👍");
     message.react("👎");
   }
-  
-  if(message.content.indexOf(Config.GetConfig().prefix) != 0) return
     
   var comandName = message.content.split(" ")[0].slice(1)
   //var comand = message.content.split(" ") "+say hi"      ->  ['+say','hi']
@@ -29,17 +29,7 @@ client.on('message', message => {
       message.channel.send(message.content.slice(4))
     }
   
-  if(comandName === 'dance'){
-    message.channel.send('\o\')
-      .then((msg) => {
-      var i
-      for(i = 0; i < 20; ++i){
-        setTimeout(function() {
-          if(i%2 == 0){ msg.edit('/o/');}
-          else {msg.edit('\o\');}
-        }, 1000)});
-      }
-  }
+  
   
   
 });
