@@ -30,7 +30,11 @@ client.on('message', message => {
     }
   
   if(comandName === 'este'){
-    
+    message.channel.send('my emotes')
+      .then((msg) => {
+      setTimeout(function() {
+        msg.edit('my other emotes');
+      }, 1000)}); 
   }
   
   
