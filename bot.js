@@ -1,6 +1,7 @@
 
 const Discord = require('discord.js');
 const Config = require('./Config.js')
+const Comands = require('./Comands.js')
 
 const client = new Discord.Client();
 
@@ -20,13 +21,9 @@ client.on('message', message => {
   }
     
   var comandName = message.content.split(" ")[0].slice(1)
-  //var comand = message.content.split(" ") "+say hi"      ->  ['+say','hi']
-  //comand = comand[0]                      ['+say','hi']  ->  '+say' 
-  //comand = comand.slice(1)                '+say'         ->  'say'
     
   if(comandName === 'say'){
-      message.delete().catch(O_o=>{}); 
-      message.channel.send(message.content.slice(4))
+      Comands.Say(message)
     }
   
   
