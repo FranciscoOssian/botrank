@@ -29,12 +29,16 @@ client.on('message', message => {
       message.channel.send(message.content.slice(4))
     }
   
-  if(comandName === 'este'){
-    message.channel.send('my emotes')
+  if(comandName === 'dance'){
+    message.channel.send('\o\')
       .then((msg) => {
-      setTimeout(function() {
-        msg.edit('my other emotes');
-      }, 1000)}); 
+      var i
+      for(i = 0; i < 20; ++i){
+        setTimeout(function() {
+          if(i%2 == 0){ msg.edit('/o/');}
+          else {msg.edit('\o\');}
+        }, 1000)});
+      }
   }
   
   
