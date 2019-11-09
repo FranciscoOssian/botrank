@@ -24,6 +24,7 @@ client.on('message', message => {
     
   if(comandName === 'say'){
       Comands.Say(message)
+
     }
   
   
