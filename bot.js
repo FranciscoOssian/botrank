@@ -13,12 +13,12 @@ client.on('message', message => {
   
   if(message.author.bot) return
   
-  if(message.content.indexOf(Config.GetConfig().prefix) != 0) return
-  
   if (message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
     message.react("👍");
     message.react("👎");
   }
+  
+  if(message.content.indexOf(Config.GetConfig().prefix) != 0) return
     
   var comandName = message.content.split(" ")[0].slice(1)
     
