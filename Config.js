@@ -12,3 +12,12 @@ fs.readFile("./config.json" , "utf8", function(err, data){
 exports.GetConfig = function() {
     return config
 }
+
+exports.SetPrefix = function(prefix){
+  let student = { 
+    "prefix": prefix
+  };
+ 
+  let data = JSON.stringify(student);
+  fs.writeFileSync('config.json', data);
+}
