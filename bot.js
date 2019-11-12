@@ -25,8 +25,12 @@ client.on('message', message => {
   if(comandName === 'say'){
       Comands.Say(message)
 
-    }
+  }
   
+  if(comandName === 'set.prefix'){
+    Comands.SetPrefix('=')
+    message.channel.send(Config.GetConfig().prefix)
+  }
   
   
   
