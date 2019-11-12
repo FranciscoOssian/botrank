@@ -8,3 +8,8 @@ module.exports.Say = Say
 const NewHome = (message) => {
 
 }
+
+const SetPrefix = (prefix) => {
+    Config.SetPrefix(prefix);
+}
+module.exports.SetPrefix = SetPrefix
