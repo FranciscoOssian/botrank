@@ -11,7 +11,7 @@ function doIt(message, value){
     }else{
         message.channel.overwritePermissions(message.channel.guild.defaultRole, { VIEW_CHANNEL: false });
     }
-    message.channel.send('sala ocultada de everyone, por favor nao mude suas permisoes');
+    message.channel.send('visibilidade da sala, modificada');
     return 0;
 }
 const channelView = (message, view) => {
