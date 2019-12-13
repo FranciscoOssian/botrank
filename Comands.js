@@ -10,14 +10,14 @@ const channelView = (message, view) => {
         if(message.author.id === pessoa.id && pessoa.allow === 805829713){
             if(view === false){
                 message.channel.overwritePermissions(message.channel.guild.defaultRole, { READ_MESSAGES: false });
+                return true;
             }else{
                 message.channel.overwritePermissions(message.channel.guild.defaultRole, { READ_MESSAGES: true });
+                return true;
             }
-            return 0;
-        }else{
-            message.channel.send('n~ao adm ou permissoes adulteradas');
         }
     }
+    return false;
 }
 
 module.exports.Say = Say;
