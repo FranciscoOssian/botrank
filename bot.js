@@ -26,11 +26,17 @@ client.on('message', message => {
       Comands.Say(message)
 
   }
-  
-  if(comandName === 'set.prefix'){
-    Comands.SetPrefix('=')
-    message.channel.send(Config.GetConfig().prefix)
+  if(comandName === 'channel.hidden'){
+      Comands.channelView(message, false);
   }
+  if(comandName === 'channel.open'){
+      Comands.channelView(message, true);
+  }
+  //if(comandName === 'channel.hidden.user'){
+  //      //var user = message.content.split(" ")[1];
+  //      message.channel.overwritePermissions(message.channel.guild.defaultRole, { VIEW_CHANNEL: false });
+  //      console.log(message.channel.guild.defaultRole)
+  //  }
   
   
   
