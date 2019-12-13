@@ -5,10 +5,6 @@ const Say = (message) => {
     message.delete().catch(O_o=>{}); 
 }
 
-const SetPrefix = (prefix) => {
-    Config.SetPrefix(prefix);
-}
-
 function doIt(message, value){
     message.channel.overwritePermissions(message.channel.guild.defaultRole, { VIEW_CHANNEL: value });
     message.channel.send('sala ocultada de everyone, por favor nao mude suas permisoes');
