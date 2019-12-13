@@ -11,6 +11,12 @@ client.on('ready', () =>{
 client.on('message', message =>{
 
     if(message.author.bot) return
+    
+    if (message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
+      message.react("👍");
+      message.react("👎");
+    }
+  
 
     if(message.content.indexOf(Config.GetConfig().prefix) != 0) return
     
@@ -37,4 +43,4 @@ client.on('message', message =>{
 });
 
 
-client.login('NDgwNTYzNzYwNjIxMjg5NDcz.XcQzKw.TdVp98UY4tDQYHsU1f3H6vbi4gU');
+client.login(process.en.bot_token);
