@@ -24,8 +24,5 @@ const channelView = (message, view) => {
     }
 }
 
-
-
-module.exports.SetPrefix = SetPrefix;
 module.exports.Say = Say;
 module.exports.channelView = channelView;
