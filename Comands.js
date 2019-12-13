@@ -6,8 +6,11 @@ const Say = (message) => {
 }
 
 function doIt(message, value){
-    console.log('1')
-    message.channel.overwritePermissions(message.channel.guild.defaultRole, { VIEW_CHANNEL: value });
+    if(value === true){
+        message.channel.overwritePermissions(message.channel.guild.defaultRole, { VIEW_CHANNEL: true });
+    }else{
+        message.channel.overwritePermissions(message.channel.guild.defaultRole, { VIEW_CHANNEL: false });
+    }
     message.channel.send('sala ocultada de everyone, por favor nao mude suas permisoes');
     return 0;
 }
