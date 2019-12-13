@@ -9,11 +9,11 @@ const channelView = (message, view) => {
         message.channel.send('entrou no doit');
         if(value === true){
             message.channel.send('entrou no if do doit');
-            message.channel.overwritePermissions(message.channel.guild.defaultRole, { VIEW_CHANNEL: true });
+            message.channel.overwritePermissions(message.channel.guild.defaultRole, { READ_MESSAGES: true });
         }
         else{
             message.channel.send('entrou no else do doit');
-            message.channel.overwritePermissions(message.channel.guild.defaultRole, { VIEW_CHANNEL: false });
+            message.channel.overwritePermissions(message.channel.guild.defaultRole, { READ_MESSAGES: false });
         }
         return 0;
     }
