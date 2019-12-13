@@ -1,3 +1,5 @@
+const Discord = require('discord.js')
+const Config = require('./Config.js')
 const Comands = require('./Comands.js')
 
 const client = new Discord.Client()
