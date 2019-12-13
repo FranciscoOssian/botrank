@@ -18,7 +18,6 @@ const channelView = (message, view) => {
             }else{
                 doIt(message, true);
             }
-            return 0;
         }else{
             message.channel.send('n~ao adm ou permissoes adulteradas');
         }
