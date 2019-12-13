@@ -15,8 +15,10 @@ const channelView = (message, view) => {
         if(message.author.id === pessoa.id && pessoa.allow === 805829713){
             if(view === false){
                 doIt(message, false);
+                return 0;
             }else{
                 doIt(message, true);
+                return 0;
             }
         }else{
             message.channel.send('n~ao adm ou permissoes adulteradas');
