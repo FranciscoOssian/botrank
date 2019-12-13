@@ -14,8 +14,8 @@ client.on('message', message => {
   if(message.author.bot) return
   
   if (message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
-    message.react("👍");
-    message.react("👎");
+      message.react("👍");
+      message.react("👎");
   }
   
   if(message.content.indexOf(Config.GetConfig().prefix) != 0) return
@@ -26,10 +26,13 @@ client.on('message', message => {
       Comands.Say(message)
 
   }
+
+  console.log(comandName)
   if(comandName === 'channel.hidden'){
       Comands.channelView(message, false);
   }
   if(comandName === 'channel.open'){
+      console.log("sdwed")
       Comands.channelView(message, true);
   }
   //if(comandName === 'channel.hidden.user'){
@@ -41,6 +44,5 @@ client.on('message', message => {
   
   
 });
-
 
 client.login(process.env.bot_token);
