@@ -5,18 +5,13 @@ const Say = (message) => {
 
 
 const channelView = (message, view) => {
-    doIt = (message, value) => {
-        message.channel.overwritePermissions(message.channel.guild.defaultRole, { READ_MESSAGES: value });
-        return 0;
-    }
-    
     for (pessoa of message.channel.permissionOverwrites){
         pessoa = pessoa[1];
         if(message.author.id === pessoa.id && pessoa.allow === 805829713){
             if(view === false){
-                doIt(message, false);
+                message.channel.overwritePermissions(message.channel.guild.defaultRole, { READ_MESSAGES: false });
             }else{
-                doIt(message, true);
+                message.channel.overwritePermissions(message.channel.guild.defaultRole, { READ_MESSAGES: true });
             }
             return 0;
         }else{
