@@ -12,10 +12,10 @@ client.on('message', message =>{
 
     if(message.author.bot) return
 
-    if(message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
-        message.react("👍");
-        message.react("👎");
-    }
+   // if(message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
+    //    message.react("👍");
+     //   message.react("👎");
+   // }
 
     if(message.content.indexOf(Config.GetConfig().prefix) != 0) return
     
@@ -29,12 +29,14 @@ client.on('message', message =>{
     }
     if(comandName === 'channel.hidden'){
         Comands.channelView(message, false);
+        message.channel.send('sala ocultada de everyone');
     }
     if(comandName === 'channel.open'){
         Comands.channelView(message, true);
+        message.channel.send('sala exposta a everyone')
     }
 
 });
 
 
-client.login(process.env.bot_token);
+client.login('NDgwNTYzNzYwNjIxMjg5NDcz.XfMicA.MFdsIlvyCge-9fy7DJqXeyMLeMo');
