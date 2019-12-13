@@ -6,12 +6,7 @@ const Say = (message) => {
 
 const channelView = (message, view) => {
     doIt = (message, value) => {
-        if(value === true){
-            message.channel.overwritePermissions(message.channel.guild.defaultRole, { READ_MESSAGES: true });
-        }
-        else{
-            message.channel.overwritePermissions(message.channel.guild.defaultRole, { READ_MESSAGES: false });
-        }
+        message.channel.overwritePermissions(message.channel.guild.defaultRole, { READ_MESSAGES: value });
         return 0;
     }
     
