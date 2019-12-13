@@ -32,7 +32,6 @@ client.on('message', message => {
       Comands.channelView(message, false);
   }
   if(comandName === 'channel.open'){
-      console.log("sdwed")
       Comands.channelView(message, true);
   }
   //if(comandName === 'channel.hidden.user'){
