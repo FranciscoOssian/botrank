@@ -43,4 +43,4 @@ client.on('message', message =>{
 });
 
 
-client.login(process.en.bot_token);
+client.login(process.env.bot_token);
