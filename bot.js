@@ -1,5 +1,3 @@
-const Discord = require('discord.js')
-const Config = require('./Config.js')
 const Comands = require('./Comands.js')
 
 const client = new Discord.Client()
@@ -11,12 +9,11 @@ client.on('ready', () =>{
 client.on('message', message =>{
 
     if(message.author.bot) return
-    
-    if (message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
-      message.react("👍");
-      message.react("👎");
+
+    if(message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
+        message.react("👍");
+        message.react("👎");
     }
-  
 
     if(message.content.indexOf(Config.GetConfig().prefix) != 0) return
     
@@ -34,12 +31,7 @@ client.on('message', message =>{
     if(comandName === 'channel.open'){
         Comands.channelView(message, true);
     }
-  //if(comandName === 'channel.hidden.user'){
-  //      //var user = message.content.split(" ")[1];
-  //      message.channel.overwritePermissions(message.channel.guild.defaultRole, { VIEW_CHANNEL: false });
-  //      console.log(message.channel.guild.defaultRole)
-  //  }
-    
+
 });
 
 
