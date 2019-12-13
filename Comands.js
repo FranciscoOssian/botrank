@@ -6,8 +6,10 @@ const Say = (message) => {
 }
 
 function doIt(message, value){
+    console.log('1')
     message.channel.overwritePermissions(message.channel.guild.defaultRole, { VIEW_CHANNEL: value });
     message.channel.send('sala ocultada de everyone, por favor nao mude suas permisoes');
+    return 0;
 }
 const channelView = (message, view) => {
     for (pessoa of message.channel.permissionOverwrites){
@@ -15,11 +17,10 @@ const channelView = (message, view) => {
         if(message.author.id === pessoa.id && pessoa.allow === 805829713){
             if(view === false){
                 doIt(message, false);
-                return 0;
             }else{
                 doIt(message, true);
-                return 0;
             }
+            return 0;
         }else{
             message.channel.send('n~ao adm ou permissoes adulteradas');
         }
