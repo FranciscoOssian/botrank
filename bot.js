@@ -19,8 +19,6 @@ client.on('message', message =>{
 
     if(message.content.indexOf(Config.GetConfig().prefix) != 0) return
     
-    console.log(require('discord.js').version)
-    
     var comandName = message.content.split(" ")[0].slice(1)
     //var comand = message.content.split(" ") "+say hi"      ->  ['+say','hi']
     //comand = comand[0]                      ['+say','hi']  ->  '+say' 
