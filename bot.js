@@ -30,12 +30,14 @@ client.on('message', message =>{
         Comands.Say(message)
     }
     if(comandName === 'channel.hidden'){
-        Comands.channelView(message, false);
-        message.channel.send('sala ocultada de everyone');
+        var haveMember = Comands.channelView(message, false);
+        if(HaveMember) message.channel.send('sala ocultada de everyone');
+        else message.channel.send('sem adm ou permissões modificadas');
     }
     if(comandName === 'channel.open'){
-        Comands.channelView(message, true);
-        message.channel.send('sala exposta a everyone')
+        var haveMember = Comands.channelView(message, true);
+        if(haveMemeber) message.channel.send('sala exposta a everyone');
+        else message.channel.send('sem adm ou permissões modificadas');
     }
 
 });
