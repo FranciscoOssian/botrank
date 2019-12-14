@@ -31,12 +31,12 @@ client.on('message', message =>{
     }
     if(comandName === 'channel.hidden'){
         var haveMember = Comands.channelView(message, false);
-        if(HaveMember) message.channel.send('sala ocultada de everyone');
+        if(haveMember) message.channel.send('sala ocultada de everyone');
         else message.channel.send('sem adm ou permissões modificadas');
     }
     if(comandName === 'channel.open'){
         var haveMember = Comands.channelView(message, true);
-        if(haveMemeber) message.channel.send('sala exposta a everyone');
+        if(haveMember) message.channel.send('sala exposta a everyone');
         else message.channel.send('sem adm ou permissões modificadas');
     }
 
