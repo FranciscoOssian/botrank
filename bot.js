@@ -48,6 +48,6 @@ client.on('message', message =>{
 });
 
 
-client.login("NDgwNTYzNzYwNjIxMjg5NDcz.XfUeCQ.Ktfz5D8jeRU9iiegZMPCqf0c-wU");
+client.login(process.env.);
 
 
