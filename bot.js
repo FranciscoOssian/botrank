@@ -10,10 +10,10 @@ client.on('ready', () =>{
 
 client.on('message', message =>{
 
-    if(message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
-        message.react("👍");
-        message.react("👎");
-    }
+  //  if(message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
+//        message.react("👍");
+  //      message.react("👎");
+ //   }
 
     if(message.author.bot) return                                       // is a bot?
     if(message.content.indexOf(Config.GetConfig().prefix) != 0) return // have prefix?
@@ -37,17 +37,20 @@ client.on('message', message =>{
         else message.channel.send('sem adm ou permissões modificadas');
     }
     if(comandName === 'ban'){
-        if(!message.member.roles.has(process.env.role_gerente))
+        if(!message.member.roles.has('638783753887416345'))
             return message.reply("Sorry, sem autorização bro");
 
         var args = message.content.slice(Config.GetConfig().prefix.length).trim().split(/ +/g);
         Comands.banMember(message, args);
         //console.log(Comands);
     }
+    if(comandName === 'help'){
+        Comands.help(message);
+    }
 
 });
 
 
-client.login(process.env.bot_token);
+client.login("NDgwNTYzNzYwNjIxMjg5NDcz.XfawQA.tWWG8cAfLPC_9t_8cUUDk8LAskE");
 
 
