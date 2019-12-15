@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const Config = require('./Config.js')
-const Comands = require('./Comands.js')
+const Comands = require('./priv/Main.js')
 
 const client = new Discord.Client()
 
@@ -10,14 +10,13 @@ client.on('ready', () =>{
 
 client.on('message', message =>{
 
-    if(message.author.bot) return
+  //  if(message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
+//        message.react("👍");
+  //      message.react("👎");
+ //   }
 
-    if(message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
-        message.react("👍");
-        message.react("👎");
-    }
-
-    if(message.content.indexOf(Config.GetConfig().prefix) != 0) return
+    if(message.author.bot) return                                       // is a bot?
+    if(message.content.indexOf(Config.GetConfig().prefix) != 0) return // have prefix?
     
     var comandName = message.content.split(" ")[0].slice(1)
     //var comand = message.content.split(" ") "+say hi"      ->  ['+say','hi']
@@ -37,8 +36,18 @@ client.on('message', message =>{
         if(haveMember) message.channel.send('sala exposta a everyone');
         else message.channel.send('sem adm ou permissões modificadas');
     }
+    if(comandName === 'ban'){
+        if(!message.member.roles.has('638783753887416345'))
+            return message.reply("Sorry, sem autorização bro");
+
+        var args = message.content.slice(Config.GetConfig().prefix.length).trim().split(/ +/g);
+        Comands.banMember(message, args);
+        //console.log(Comands);
+    }
 
 });
 
 
-client.login(process.env.bot_token);
+client.login("NDgwNTYzNzYwNjIxMjg5NDcz.XfUeCQ.Ktfz5D8jeRU9iiegZMPCqf0c-wU");
+
+
