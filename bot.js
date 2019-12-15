@@ -10,10 +10,10 @@ client.on('ready', () =>{
 
 client.on('message', message =>{
 
-  //  if(message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
-//        message.react("👍");
-  //      message.react("👎");
- //   }
+    if(message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
+        message.react("👍");
+        message.react("👎");
+    }
 
     if(message.author.bot) return                                       // is a bot?
     if(message.content.indexOf(Config.GetConfig().prefix) != 0) return // have prefix?
@@ -48,6 +48,6 @@ client.on('message', message =>{
 });
 
 
-client.login(process.env.);
+client.login(process.env.bot_token);
 
 
