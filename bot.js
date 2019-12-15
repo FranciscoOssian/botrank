@@ -51,6 +51,6 @@ client.on('message', message =>{
 });
 
 
-client.login("NDgwNTYzNzYwNjIxMjg5NDcz.XfawQA.tWWG8cAfLPC_9t_8cUUDk8LAskE");
+client.login(process.env.bot_token);
 
 
