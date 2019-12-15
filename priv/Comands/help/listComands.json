@@ -1,0 +1,20 @@
+{
+    "say": {
+        "name": "say",
+        "descript": "faça o bot falar"
+    },
+
+    "channel.open":{
+        "name": "channel.open",
+        "descript": "Abra sua sala para everyone"
+    },
+    "channel.hidden":{
+        "name": "channel.hidden",
+        "descript": "Esconda sua sala de everyone"
+    },
+
+    "banMember":{
+        "name": "banMember",
+        "descript": "Faça o banimento de um membro"
+    }
+}
