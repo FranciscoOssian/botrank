@@ -37,7 +37,7 @@ client.on('message', message =>{
         else message.channel.send('sem adm ou permissões modificadas');
     }
     if(comandName === 'ban'){
-        if(!message.member.roles.has('638783753887416345'))
+        if(!message.member.roles.has(process.env.role_gerente))
             return message.reply("Sorry, sem autorização bro");
 
         var args = message.content.slice(Config.GetConfig().prefix.length).trim().split(/ +/g);
