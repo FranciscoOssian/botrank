@@ -23,32 +23,44 @@ client.on('message', message =>{
     //comand = comand[0]                      ['+say','hi']  ->  '+say' 
     //comand = comand.slice(1)                '+say'         ->  'say'
     
-    if(comandName === 'say'){
-        try{ Comands.Say(message) }
-        catch(e){}
-    }
-    if(comandName === 'channel.hidden'){
-        var haveMember = Comands.channelView(message, false);
-        if(haveMember) message.channel.send('sala ocultada de everyone');
-        else message.channel.send('sem adm ou permissões modificadas');
-    }
-    if(comandName === 'channel.open'){
-        var haveMember = Comands.channelView(message, true);
-        if(haveMember) message.channel.send('sala exposta a everyone');
-        else message.channel.send('sem adm ou permissões modificadas');
-    }
-    if(comandName === 'ban'){
-        if(!message.member.roles.has('638783753887416345'))
+    switch (comandName){
+        case 'say':
+        {
+            Comands.Say(message)
+            break;
+        }
+        case 'channel.hidden':
+        {
+            var haveMember = Comands.channelView(message, false);
+            if(haveMember) message.channel.send('sala ocultada de everyone');
+            else message.channel.send('sem adm ou permissões modificadas');
+            break;
+        }
+        case 'channel.open':
+        {
+            var haveMember = Comands.channelView(message, true);
+            if(haveMember) message.channel.send('sala exposta a everyone');
+            else message.channel.send('sem adm ou permissões modificadas');
+            break;
+        }
+        case 'ban':{
+            if(!message.member.roles.has('638783753887416345'))
             return message.reply("Sorry, sem autorização bro");
 
-        var args = message.content.slice(Config.GetConfig().prefix.length).trim().split(/ +/g);
-        Comands.banMember(message, args);
-        //console.log(Comands);
-    }
-    if(comandName === 'help'){
-        Comands.help(message);
-    }
-
+            var args = message.content.slice(Config.GetConfig().prefix.length).trim().split(/ +/g);
+            Comands.banMember(message, args);
+            break;
+        }
+        case 'help':{
+            Comands.help(message);
+            break;
+        }
+        default:{
+            console.log('erro');
+            message.channel.send('error');
+        }
+    }// switch ends her
+    
 });
 
 
