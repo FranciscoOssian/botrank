@@ -5,17 +5,12 @@ const help = (message) => {
 
     const embed = new RichEmbed()
 
-    embed.setColor('#0099ff')
+    	embed.setColor('#0099ff')
 	embed.setTitle('COMANDOS')
 	embed.setURL('https://discord.js.org/')
-    embed.setAuthor('Rank Bot', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-    //embed.setDescription('')
-	//embed.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+    	embed.setAuthor('Rank Bot', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
 
     for (var comand in listComands){
-        console.log(comand + " = " + listComands[comand]);
-        console.log(listComands[comand]);
-
         embed.addField(listComands[comand].name, listComands[comand].descript);
         embed.addBlankField();
 
