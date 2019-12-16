@@ -46,7 +46,7 @@ client.on('message', message =>{
         //console.log(Comands);
     }
     if(comandName === 'help'){
-        ///Comands.help(message);
+        Comands.help(message);
     }
 
 });
