@@ -10,10 +10,10 @@ client.on('ready', () =>{
 
 client.on('message', message =>{
 
-  //  if(message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
-//        message.react("👍");
-  //      message.react("👎");
- //   }
+    if(message.channel.id === process.env.id_channel_memes || message.channel.id === process.env.id_channel_sugestoes) {
+        message.react("👍");
+        message.react("👎");
+    }
 
     if(message.author.bot) return                                       // is a bot?
     if(message.content.indexOf(Config.GetConfig().prefix) != 0) return // have prefix?
@@ -24,28 +24,37 @@ client.on('message', message =>{
     //comand = comand.slice(1)                '+say'         ->  'say'
     
     if(comandName === 'say'){
-        Comands.Say(message)
+        try{ Comands.Say(message) }
+        catch(){}
     }
     if(comandName === 'channel.hidden'){
-        var haveMember = Comands.channelView(message, false);
-        if(haveMember) message.channel.send('sala ocultada de everyone');
-        else message.channel.send('sem adm ou permissões modificadas');
+        try{
+            var haveMember = Comands.channelView(message, false);
+            if(haveMember) message.channel.send('sala ocultada de everyone');
+            else message.channel.send('sem adm ou permissões modificadas');
+        }catch(){}
     }
     if(comandName === 'channel.open'){
-        var haveMember = Comands.channelView(message, true);
-        if(haveMember) message.channel.send('sala exposta a everyone');
-        else message.channel.send('sem adm ou permissões modificadas');
+        try{
+            var haveMember = Comands.channelView(message, true);
+            if(haveMember) message.channel.send('sala exposta a everyone');
+            else message.channel.send('sem adm ou permissões modificadas');
+        catch(){}
     }
     if(comandName === 'ban'){
-        if(!message.member.roles.has('638783753887416345'))
-            return message.reply("Sorry, sem autorização bro");
+        try{
+            if(!message.member.roles.has('638783753887416345'))
+                return message.reply("Sorry, sem autorização bro");
 
-        var args = message.content.slice(Config.GetConfig().prefix.length).trim().split(/ +/g);
-        Comands.banMember(message, args);
-        //console.log(Comands);
+            var args = message.content.slice(Config.GetConfig().prefix.length).trim().split(/ +/g);
+            Comands.banMember(message, args);
+            //console.log(Comands);
+        }catch(){}
     }
     if(comandName === 'help'){
-        Comands.help(message);
+        try{
+            Comands.help(message);
+        }catch(){}
     }
 
 });
