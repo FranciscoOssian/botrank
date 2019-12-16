@@ -13,8 +13,8 @@
         "descript": "Esconda sua sala de everyone"
     },
 
-    "banMember":{
-        "name": "banMember",
+    "ban":{
+        "name": "ban",
         "descript": "Faça o banimento de um membro"
     }
 }
