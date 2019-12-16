@@ -18,7 +18,9 @@ const help = (message) => {
 
     embed.setTimestamp()
     embed.setFooter('prefix + comand', '');
-    message.channel.send(embed);
+	
+	console.log(message, embed);
+    	message.channel.send(embed);
 
     
 }
