@@ -19,7 +19,7 @@ const help = (message) => {
     embed.setTimestamp()
     embed.setFooter('prefix + comand', '');
 
-    message.author.sendMessage({embed});
+    message.author.send({embed});
     message.channel.send('Enviei para você uma lista dos meus comandos ;)');
 
     
