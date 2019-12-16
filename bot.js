@@ -28,33 +28,25 @@ client.on('message', message =>{
         catch(e){}
     }
     if(comandName === 'channel.hidden'){
-        try{
-            var haveMember = Comands.channelView(message, false);
-            if(haveMember) message.channel.send('sala ocultada de everyone');
-            else message.channel.send('sem adm ou permissões modificadas');
-        }catch(e){}
+        var haveMember = Comands.channelView(message, false);
+        if(haveMember) message.channel.send('sala ocultada de everyone');
+        else message.channel.send('sem adm ou permissões modificadas');
     }
     if(comandName === 'channel.open'){
-        try{
-            var haveMember = Comands.channelView(message, true);
-            if(haveMember) message.channel.send('sala exposta a everyone');
-            else message.channel.send('sem adm ou permissões modificadas');
-        }catch(e){}
+        var haveMember = Comands.channelView(message, true);
+        if(haveMember) message.channel.send('sala exposta a everyone');
+        else message.channel.send('sem adm ou permissões modificadas');
     }
     if(comandName === 'ban'){
-        try{
-            if(!message.member.roles.has('638783753887416345'))
-                return message.reply("Sorry, sem autorização bro");
+        if(!message.member.roles.has('638783753887416345'))
+            return message.reply("Sorry, sem autorização bro");
 
-            var args = message.content.slice(Config.GetConfig().prefix.length).trim().split(/ +/g);
-            Comands.banMember(message, args);
-            //console.log(Comands);
-        }catch(e){}
+        var args = message.content.slice(Config.GetConfig().prefix.length).trim().split(/ +/g);
+        Comands.banMember(message, args);
+        //console.log(Comands);
     }
     if(comandName === 'help'){
-        try{
-            Comands.help(message);
-        }catch(e){}
+        ///Comands.help(message);
     }
 
 });
