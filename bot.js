@@ -39,7 +39,7 @@ client.on('message', message =>{
             var haveMember = Comands.channelView(message, true);
             if(haveMember) message.channel.send('sala exposta a everyone');
             else message.channel.send('sem adm ou permissões modificadas');
-        catch(e){}
+        }catch(e){}
     }
     if(comandName === 'ban'){
         try{
