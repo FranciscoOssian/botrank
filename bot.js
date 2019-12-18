@@ -57,20 +57,24 @@ client.on('message', message =>{
             break;
         }
         case 'wasted':{
-var images = [message.author.avatarURL, "./sticker_2121.png"];
+        var images = [message.member.avatarURL, 'sticker_2121.png'];
+        var jimps = [];
 
-for(image of images){
 
+        for(image of images){
+            jimps.push(Jimp.read(image));
+        }
 
-         Jimp.read(message.author.avatarURL, (err, lenna) => {
-                if (err) throw err;
-                lenna
-                     .greyscale() // set greyscale
-                     .write('./teste.jpg'); // save
+        Promise.all(jimps).then(function(data){
+            return Promise.all(jimps);}).then(function(data){
 
-            });
-            message.channel.send('bem vindo ', { file: "./teste.jpg" });
-            break;
+                data[0].greyscale();
+                data[0].composite(data[1], 0, 0);
+                data[0].write('./testef.png');
+
+                message.channel.send('image:', { files:["./testef.png"] } );
+
+            }).catch(function(err){ console.log(err) });
         }
         default:{
             console.log('erro');
