@@ -57,20 +57,16 @@ client.on('message', message =>{
             break;
         }
         case 'grey':{
-            var images = [message.member.avatarURL];
-            var jimps = [];
+            Jimp.read(message.member.avatarURL, (err, lenna) => {
+                if (err) throw err;
+                lenna
+                     .resize(256, 256) // resize
+                     .quality(60) // set JPEG quality
+                     .greyscale() // set greyscale
+                     .write('./teste.jpg'); // save
 
-            for(image of images){
-                jimps.push(Jimp.read(image));
-            }
-
-            Promise.all(jimps).then(function(data){
-                return Promise.all(jimps);
-            }).then(function(data){
-                data.greyscale();
-                data.write('./testef.png');
-                message.channel.send('image:', { files:["./testef.png"] } );
-            }).catch(function(err){ console.log(err) });
+            });
+            message.channel.send('', { file: "./teste.jpg" });
             break;
         }
         default:{
