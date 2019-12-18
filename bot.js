@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const Config = require('./Config.js')
 const Comands = require('./priv/Main.js')
+const Jimp = require('jimp');
 
 const client = new Discord.Client()
 
@@ -53,6 +54,24 @@ client.on('message', message =>{
         }
         case 'help':{
             Comands.help(message);
+            break;
+        }
+        case 'teste':{
+            var images = ['timage.jpeg', 'timage2.jpg'];
+            var jimps = [];
+
+            for(image of images){
+                jimps.push(Jimp.read(image));
+            }
+
+            Promise.all(jimps).then(function(data){
+                return Promise.all(jimps);
+            }).then(function(data){
+                data[0].composite(data[1], 0, 0);
+                data[0].write('./testef.png');
+                //var ata = new Attachment('./testef.png');
+                message.channel.send('image:', { files:["./testef.png"] } );
+            })
             break;
         }
         default:{
