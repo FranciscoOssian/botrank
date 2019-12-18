@@ -70,7 +70,7 @@ client.on('message', message =>{
                 data[0].greyscale();
                 data[0].write('./testef.png');
                 message.channel.send('image:', { files:["./testef.png"] } );
-            })
+            }).catch(function(err){ console.log(err) });
             break;
         }
         default:{
