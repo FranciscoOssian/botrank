@@ -57,22 +57,22 @@ client.on('message', message =>{
             break;
         }
         case 'teste':{
-            var images = ['timage.jpeg', 'timage2.jpg'];
-            var jimps = [];
-
-            for(image of images){
-                jimps.push(Jimp.read(image));
-            }
-
-            Promise.all(jimps).then(function(data){
-                return Promise.all(jimps);
-            }).then(function(data){
-                data[0].composite(data[1], 0, 0);
-                data[0].write('./testef.png');
-                //var ata = new Attachment('./testef.png');
-                message.channel.send('image:', { files:["./testef.png"] } );
-            })
-            break;
+            //var images = ['timage.jpeg', 'timage2.jpg'];
+            //var jimps = [];
+//
+  //          for(image of images){
+    //            jimps.push(Jimp.read(image));
+      //      }
+//
+  //          Promise.all(jimps).then(function(data){
+    //            return Promise.all(jimps);
+      //      }).then(function(data){
+        //        data[0].composite(data[1], 0, 0);
+          //      data[0].write('./testef.png');
+            //    //var ata = new Attachment('./testef.png');
+         //       message.channel.send('image:', { files:["./testef.png"] } );
+        //    })
+          //  break;
         }
         default:{
             console.log('erro');
