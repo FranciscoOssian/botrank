@@ -1,3 +1,5 @@
+
+
 const Discord = require('discord.js')
 const Config = require('./Config.js')
 const Comands = require('./priv/Main.js')
@@ -57,24 +59,25 @@ client.on('message', message =>{
             break;
         }
         case 'wasted':{
-        var images = [message.member.avatarURL, 'sticker_2121.png'];
-        var jimps = [];
+            var images = [message.member.avatarURL, 'sticker_2121.png'];
+            var jimps = [];
 
 
-        for(image of images){
-            jimps.push(Jimp.read(image));
-        }
+            for(image of images){
+                jimps.push(Jimp.read(image));
+            }
 
-        Promise.all(jimps).then(function(data){
-            return Promise.all(jimps);}).then(function(data){
+            Promise.all(jimps).then(function(data){
+                return Promise.all(jimps);}).then(function(data){
 
-                data[0].greyscale();
-                data[0].composite(data[1], 0, 0);
-                data[0].write('./testef.png');
+                    data[0].greyscale();
+                    data[0].composite(data[1], 0, 0);
+                    data[0].write('./testef.png');
 
-                message.channel.send('image:', { files:["./testef.png"] } );
+                    message.channel.send('image:', { files:["./testef.png"] } );
 
-            }).catch(function(err){ console.log(err) });
+                }).catch(function(err){ console.log(err) });
+            break;
         }
         default:{
             console.log('erro');
@@ -86,5 +89,4 @@ client.on('message', message =>{
 
 
 client.login(process.env.bot_token);
-
 
