@@ -67,8 +67,8 @@ client.on('message', message =>{
             Promise.all(jimps).then(function(data){
                 return Promise.all(jimps);
             }).then(function(data){
-                data[0].greyscale();
-                data[0].write('./testef.png');
+                data.greyscale();
+                data.write('./testef.png');
                 message.channel.send('image:', { files:["./testef.png"] } );
             }).catch(function(err){ console.log(err) });
             break;
