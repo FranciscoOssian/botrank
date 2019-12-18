@@ -56,17 +56,15 @@ client.on('message', message =>{
             Comands.help(message);
             break;
         }
-        case 'grey':{
-            Jimp.read(message.member.avatarURL, (err, lenna) => {
+        case 'avatar.tururu':{
+            Jimp.read(message.author.avatarURL, (err, lenna) => {
                 if (err) throw err;
                 lenna
-                     .resize(256, 256) // resize
-                     .quality(60) // set JPEG quality
                      .greyscale() // set greyscale
                      .write('./teste.jpg'); // save
 
             });
-            message.channel.send('', { file: "./teste.jpg" });
+            message.channel.send('bem vindo ', { file: "./teste.jpg" });
             break;
         }
         default:{
