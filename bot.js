@@ -56,8 +56,13 @@ client.on('message', message =>{
             Comands.help(message);
             break;
         }
-        case 'avatar.tururu':{
-            Jimp.read(message.author.avatarURL, (err, lenna) => {
+        case 'wasted':{
+var images = [message.author.avatarURL, "./sticker_2121.png"];
+
+for(image of images){
+
+
+         Jimp.read(message.author.avatarURL, (err, lenna) => {
                 if (err) throw err;
                 lenna
                      .greyscale() // set greyscale
