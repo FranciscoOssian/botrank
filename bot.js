@@ -2,7 +2,7 @@
 
 const Discord = require('discord.js')
 const Config = require('./Config.js')
-const Comands = require('./priv/Main.js')
+const Comands = require('./private/Main.js')
 const Jimp = require('jimp');
 
 const client = new Discord.Client()
