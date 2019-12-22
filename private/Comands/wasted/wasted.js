@@ -1,34 +1,13 @@
 const Jimp = require('jimp');
 
 wasted = (message, args) => {
-    console.log(args);
-
-    if(message.mentions.roles)console.log('oi');
-
-    var user;
 
     /// por enquanto só da de si mesmo
     //codigo gororoba ainda
 
-    try {
-        (args[2].length)
-
-        var userID = args[2];
-
-        userID.splice(0, 2);
-        userID.splice(userID.length-1, 1);
-
-        userID = userID.join('');
-
-        user = message.guild.members.get("id", userID);
-        user = user.author.avatarURL;
-    } catch (error) {
-        //console.log(error)
-        user = message.author.avatarURL
-    }
+    var user = message.author.avatarURL;
     
-
-    var images = [user, 'priv/Comands/wasted/wasted.png'];
+    var images = [user, 'private/Comands/wasted/wasted.png'];
     var jimps = [];
 
     for(image of images){
