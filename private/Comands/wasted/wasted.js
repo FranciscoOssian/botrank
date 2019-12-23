@@ -21,8 +21,8 @@ wasted = (message, args) => {
         data[0].resize(400, 400)
             .greyscale()
             .composite(data[1], 0, 0)
-            .write('priv/Comands/wasted/wasted_result.png');
-        message.channel.send('', { files:["./priv/Comands/wasted/wasted_result.png"] } );
+            .write('./wasted_result.png');
+        message.channel.send('', { files:["./wasted_result.png"] } );
     })
 
 }
