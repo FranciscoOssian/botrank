@@ -24,7 +24,7 @@ client.on('message', message =>{
     var comandName = message.content.split(" ")[0].slice(1)
     //var comand = message.content.split(" ") "+say hi"      ->  ['+say','hi']
     //comand = comand[0]                      ['+say','hi']  ->  '+say' 
-    //comand = comand.slice(1)                '+say'         ->  'say'
+    //comand = comand.slice(1).                '+say'         ->  'say'
     
     switch (comandName){
         case 'say':
